@@ -1,0 +1,23 @@
+{
+    "name" :"Hide someone's messages on Slack",
+    "version" :"1.0",
+    "manifest_version": 2,
+    "description" :"Hide messages from a specific person",
+    "browser_action": {
+        "name": "Manipulate DOM",
+        "icons": ["hide.png"],
+        "default_icon": "hide.png",
+        "default_popup": "template/hide.html"
+      },
+    "content_scripts": [
+        {
+          "matches": ["http://*.slack.com/messages/*", "https://*.slack.com/messages/*"],
+          "js": ["vendor/jquery-2.1.4.min.js", "js/hide.js"]
+        }
+      ],
+    "permissions": [
+        "storage",
+        "tabs",
+        "https://*.slack.com/*"
+    ]
+}
