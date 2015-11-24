@@ -65,7 +65,7 @@ var hide = function() {
     chrome.storage.local.get({users: []}, function (result) {
         var users = result.users;
         for (var user in users) {
-            $('a[href="/team/'+users[user]+'"]').closest('div[id*="msg_"]').hide();
+            $('a[href="/team/'+users[user]+'"]').closest('ts-message[id*="msg_"]').hide();
         }
     });
 };
